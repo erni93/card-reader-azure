@@ -1,0 +1,109 @@
+<div *ngIf="fileSelected()" class="row upload-row jackInTheBox animated">
+    <div class="col text-center">
+        <button class="btn btn-success btn-lg" (click)="upload()" [disabled]="loading">
+            <i *ngIf="!loading" class="fa fa-upload" aria-hidden="true"></i>
+            <i *ngIf="loading" class="fa fa-cog fa-spin fa-3x fa-fw" aria-hidden="true"></i>
+            {{loading ? 'Uploading ...' : 'Upload'}}
+        </button>
+    </div>
+</div>
+<div *ngIf="error != null" class="row ">
+    <div class="col text-center">
+        <h3 class="error">
+            <i class="fa fa-exclamation-triangle" aria-hidden="true"></i>
+            Error: {{error}}
+        </h3>
+    </div>
+</div>
+<ng-container *ngIf="contact != null" >
+
+    <div class="row contact-row">
+
+        <div class="col-12">
+            <p>
+                <i class="fa fa-comments" aria-hidden="true"></i>
+                Words:
+            </p>
+            <div *ngFor="let word of contact.unknown" class="word-item">
+                {{word}}
+            </div>
+        </div>
+        
+    </div>
+    <div class="row contact-row">
+        <div class="col-12">
+            <p>
+                <i class="fa fa-address-card" aria-hidden="true"></i>
+                Contact:
+            </p>
+        </div>
+        <div class="col-12 col-md-6">
+            <div class="form-group">
+                <label>
+                    <i class="fa fa-user-o" aria-hidden="true"></i>
+                    Name:
+                </label>
+                <input type="text" class="form-control" placeholder="Full name" [(ngModel)]="contact.fullName" >
+            </div>
+            <div class="form-group">
+                <label>
+                    <i class="fa fa-map-marker" aria-hidden="true"></i>
+                    Address:
+                </label>
+                <input type="text" class="form-control" placeholder="Address" [(ngModel)]="contact.address">
+            </div>
+            <div class="form-group">
+                <label>
+                    <i class="fa fa-globe" aria-hidden="true"></i>
+                    Website:
+                </label>
+                <input type="text" class="form-control" placeholder="Website" [(ngModel)]="contact.website">
+            </div>
+            <div class="form-group">
+                <label>
+                    <i class="fa fa-facebook-official" aria-hidden="true"></i>
+                    Facebook:
+                </label>
+                <input type="text" class="form-control" placeholder="Facebook" [(ngModel)]="contact.facebook">
+            </div>
+            
+        </div>
+        <div class="col-12 col-md-6">
+            <div class="form-group">
+                <label>
+                    <i class="fa fa-phone" aria-hidden="true"></i>
+                    Telephone:
+                </label>
+                <input type="text" class="form-control" placeholder="Telephone" [(ngModel)]="contact.telephone">
+            </div>
+            <div class="form-group">
+                <label>
+                    <i class="fa fa-envelope" aria-hidden="true"></i>
+                    Email:
+                </label>
+                <input type="email" class="form-control" placeholder="Email" [(ngModel)]="contact.email">
+            </div>
+            <div class="form-group">
+                <label>
+                    <i class="fa fa-twitter" aria-hidden="true"></i>
+                    Twitter:
+                </label>
+                <input type="text" class="form-control" placeholder="Twitter" [(ngModel)]="contact.twitter">
+            </div>
+            <div class="form-group">
+                <label>
+                    <i class="fa fa-linkedin" aria-hidden="true"></i>
+                    Linkedin:
+                </label>
+                <input type="text" class="form-control" placeholder="Linkedin" [(ngModel)]="contact.linkedin">
+            </div>
+        </div>
+        <div class="col-12 text-center">
+            <button class="btn btn-success" (click) = "downloadVcard()">
+                <i class="fa fa-download" aria-hidden="true"></i>
+                Download contact
+            </button>
+        </div>
+    </div>
+
+</ng-container>

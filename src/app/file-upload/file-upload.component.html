@@ -1,0 +1,16 @@
+<div class="row" [class.dragenter] = "dragenter">
+    <div class="col-sm-12 d-flex align-items-center justify-content-center">
+        <h3>
+            <i class="fa fa-file-image-o" aria-hidden="true"></i>
+            Drop file here or click to upload.
+        </h3>
+    </div>
+    <div *ngIf="imageBase64" class="col-sm-12 d-flex align-items-center justify-content-center">
+        <figure class="figure text-center">
+            <img src="{{imageBase64}}" class="figure-img img-fluid rounded" title="{{fileName}}" />
+            <figcaption class="figure-caption">{{fileName}}</figcaption>
+        </figure>
+    </div>
+    <input #inputFile type="file" accept="image/*" capture
+        (change)="onInputChange($event)" (dragenter) = "dragenter = true" (dragleave) = "dragenter = false">
+</div>

@@ -1,0 +1,6 @@
+.container:first-child{
+    margin-top: 1em;
+}
+.col{
+    padding: 0;
+}

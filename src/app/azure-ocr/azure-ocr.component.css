@@ -1,0 +1,26 @@
+div.upload-row{
+    margin-top: 1em;
+}
+
+.fa-spin{
+    font-size: 20px;
+}
+
+h3.error{
+    color: #F44336;
+    margin-top: 1em;
+    background-color: #e8e8e8;
+    padding: .5em;
+}
+
+div.contact-row{
+    margin-top: 1em;
+}
+
+div.word-item{
+    border: dashed 2px #dadada;
+    padding: 6px;
+    display: inline-block;
+    margin-right: 1em;
+    margin-top: 1em;
+}
